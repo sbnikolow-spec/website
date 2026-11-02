@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Зорница — био домашни продукти</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{--bg:#f6f2ea;--ink:#23251f;--mut:#76786b;--acc:#4b6b3a;--card:#ebe5d8;--line:#d9d2c2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161814;--ink:#ece8dc;--mut:#9a9c8e;--acc:#9cbf82;--card:#1f221c;--line:#2e3229;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161814;--ink:#ece8dc;--mut:#9a9c8e;--acc:#9cbf82;--card:#1f221c;--line:#2e3229;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.7 Manrope,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+.serif,h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.01em}
+em{font-style:italic;color:var(--acc)}
+a{color:inherit;text-decoration:none}
+.w{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+header{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:500 26px "Cormorant Garamond",serif;letter-spacing:.02em}
+nav{display:flex;gap:32px;font-size:14px;color:var(--mut)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;border:1px solid var(--ink);background:none;color:var(--ink);padding:12px 26px;border-radius:99px;font:500 14px Manrope,sans-serif;cursor:pointer;transition:.3s}
+.btn:hover,.btn.f{background:var(--ink);color:var(--bg)}
+.btn.f:hover{background:var(--acc);border-color:var(--acc)}
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero h1{font-size:clamp(54px,10.5vw,148px);position:relative;z-index:2}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}.ln>span{display:inline-block}
+.hero p{max-width:440px;margin:36px 0 36px;color:var(--mut);position:relative;z-index:2}
+.orb{position:absolute;border-radius:50%;z-index:1}
+.o1{width:min(46vw,560px);aspect-ratio:1;right:-6vw;top:14%;background:var(--card)}
+.o2{width:min(18vw,220px);aspect-ratio:1;right:24vw;bottom:10%;background:var(--acc);opacity:.85}
+.o3{width:min(8vw,90px);aspect-ratio:1;right:9vw;bottom:30%;border:1px solid var(--ink)}
+.scroll{position:absolute;left:clamp(20px,4vw,48px);bottom:28px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.mani{padding:140px 0;border-top:1px solid var(--line)}
+.mani p{font:400 clamp(28px,4.4vw,56px)/1.25 "Cormorant Garamond",serif;max-width:980px}
+.label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:28px;display:block}
+.sec{padding:120px 0;border-top:1px solid var(--line)}
+.sec h2{font-size:clamp(40px,6vw,80px);margin-bottom:64px;max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 28px}
+.vis{background:var(--card);aspect-ratio:4/5;border-radius:4px;display:grid;place-items:center;overflow:hidden;color:var(--acc)}
+.vis svg{width:46%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .vis svg{transform:scale(1.1) rotate(-3deg)}
+.card h3{font-size:30px;margin:20px 0 4px}
+.card p{color:var(--mut);font-size:14px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.pr{font:500 24px "Cormorant Garamond",serif}.pr small{font:400 12px Manrope;color:var(--mut);margin-left:6px}
+.add{border:1px solid var(--line);background:none;color:var(--ink);width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;transition:.3s}
+.add:hover{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.st{border-top:1px solid var(--ink);padding-top:24px}
+.st b{font:400 64px "Cormorant Garamond",serif;color:var(--acc);display:block;line-height:1}
+.st h3{font-size:32px;margin:18px 0 10px}.st p{color:var(--mut);font-size:15px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about .vis{aspect-ratio:1}.about .vis svg{width:60%}
+.about p{color:var(--mut);margin-bottom:18px}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+blockquote{font:400 clamp(24px,3vw,34px)/1.3 "Cormorant Garamond",serif}
+blockquote cite{display:block;margin-top:18px;font:400 13px Manrope;color:var(--mut);font-style:normal;letter-spacing:.05em}
+.cta{padding:140px 0;text-align:center;border-top:1px solid var(--line)}
+.cta h2{font-size:clamp(44px,8vw,112px);margin:0 auto 40px}
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(--mut)}
+footer .w{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);border-left:1px solid var(--line);z-index:70;transform:translateX(105%);transition:transform .6s cubic-bezier(.7,0,.2,1);padding:calc(28px + env(safe-area-inset-top,0px)) 28px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;overflow-y:auto}
+.drawer.on{transform:none}
+.drawer h3{font-size:36px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.x{background:none;border:0;color:var(--ink);font-size:28px;cursor:pointer}
+.it{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.it span:last-child{white-space:nowrap}
+.q{display:inline-flex;gap:10px;align-items:center;margin-top:4px}.q button{border:1px solid var(--line);background:none;color:var(--ink);width:24px;height:24px;border-radius:50%;cursor:pointer}
+.tot{display:flex;justify-content:space-between;font:500 26px "Cormorant Garamond",serif;margin:18px 0}
+.drawer input{width:100%;padding:12px 0;margin-bottom:6px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--ink);font:inherit;font-size:14px;outline:0}
+.drawer input:focus{border-color:var(--acc)}
+.empty,.ok{color:var(--mut);padding:24px 0}
+.shade{position:fixed;inset:0;background:#0006;z-index:65;opacity:0;pointer-events:none;transition:.4s}.shade.on{opacity:1;pointer-events:auto}
+@media(max-width:860px){nav{display:none}.grid,.steps,.about,.quotes{grid-template-columns:1fr}.grid{gap:40px}.about{gap:40px}.sec,.mani,.cta{padding:80px 0}.o1{top:30%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="#top">Зорница</a>
+<nav><a href="#produkti">Продукти</a><a href="#proces">Как работим</a><a href="#mandrata">Мандрата</a></nav>
+<button class="btn" id="open">Поръчка (<span id="cnt">0</span>)</button></div></header>
+
+<main id="top">
+<section class="hero"><div class="orb o1" data-s="-12"></div><div class="orb o2" data-s="-30"></div><div class="orb o3" data-s="-45"></div>
+<div class="w"><h1><span class="ln"><span>Вкусът на</span></span><span class="ln"><span>истинското</span></span><span class="ln"><span><em>мляко.</em></span></span></h1>
+<p class="fade">Био млечни продукти, приготвени на ръка в малка семейна мандра в Родопите. Без добавки. Без бързане.</p>
+<a class="btn f fade" href="#produkti">Разгледай продуктите</a></div>
+<span class="scroll">Скролни ↓</span></section>
+
+<section class="mani"><div class="w"><span class="label">Нашата вяра</span>
+<p id="mani">Вярваме, че храната трябва да има лице. Мляко от кравите, които познаваме по име. Сирене, узряло в тишината на старата изба. Всичко, което е в буркана, е това, което виждате — нищо повече.</p></div></section>
+
+<section class="sec" id="produkti"><div class="w"><span class="label">Продукти</span><h2>Малко неща, <em>направени добре.</em></h2>
+<div class="grid" id="grid"></div></div></section>
+
+<section class="sec" id="proces"><div class="w"><span class="label">Как работим</span><h2>От пасището до <em>вашата маса.</em></h2>
+<div class="steps">
+<div class="st"><b>01</b><h3>Пасището</h3><p>Кравите и овцете ни пасат свободно на планинските поляни, без силаж и без стимулатори.</p></div>
+<div class="st"><b>02</b><h3>Мандрата</h3><p>Млякото се преработва в рамките на часове — на малки партиди, по семейни рецепти.</p></div>
+<div class="st"><b>03</b><h3>Доставката</h3><p>Опаковаме на ръка и изпращаме охладено до вратата ви в рамките на 24 часа.</p></div>
+</div></div></section>
+
+<section class="sec" id="mandrata"><div class="w about">
+<div class="vis"><svg viewBox="0 0 120 120" fill="currentColor"><path d="M10 100 60 30l50 70z" opacity=".35"/><path d="M40 100 80 48l40 52z"/><circle cx="92" cy="26" r="10"/></svg></div>
+<div><span class="label">Мандрата</span><h2 style="margin-bottom:32px;font-size:clamp(36px,5vw,64px)">Три поколения <em>търпение.</em></h2>
+<p>Започнахме с две крави и една стара рецепта на баба Зорница. Днес сме малко семейство, което все още прави сиренето по същия начин — бавно и с уважение към млякото.</p>
+<p>Не се стремим да сме най-големите. Искаме да сме най-вкусните и най-честните.</p></div></div></section>
+
+<section class="sec"><div class="w"><span class="label">Отзиви</span><div class="quotes">
+<blockquote>„Вкусът на сиренето ми напомни за детството при баба. Не бях го усещала от години.“<cite>— Мария, София</cite></blockquote>
+<blockquote>„Поръчвам всяка седмица. Прясно, чисто и винаги пристига навреме.“<cite>— Георги, Пловдив</cite></blockquote>
+</div></div></section>
+
+<section class="cta"><div class="w"><h2>Опитайте <em>истинското.</em></h2><a class="btn f" href="#produkti">Започни поръчката</a></div></section>
+</main>
+
+<footer><div class="w"><span>© 2026 Зорница · Био домашни продукти</span><span>Родопи, България · zdravei@zornitsa.bg · +359 88 000 0000</span></div></footer>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer" aria-label="Поръчка"><h3>Вашата поръчка <button class="x" id="close" aria-label="Затвори">×</button></h3><div id="items"></div></aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const S={
+cheese:'<svg viewBox="0 0 120 120" fill="currentColor"><path d="M14 90V64l92-30v56z"/><circle cx="40" cy="74" r="5" fill="var(--card)"/><circle cx="72" cy="64" r="7" fill="var(--card)"/><circle cx="90" cy="78" r="4" fill="var(--card)"/></svg>',
+wheel:'<svg viewBox="0 0 120 120" fill="currentColor"><path d="M16 50v28c0 10 20 18 44 18s44-8 44-18V50z" opacity=".7"/><ellipse cx="60" cy="50" rx="44" ry="18"/></svg>',
+milk:'<svg viewBox="0 0 120 120" fill="currentColor"><path d="M47 14h26v16l12 16v62H35V46l12-16z"/><rect x="35" y="64" width="50" height="24" fill="var(--card)" opacity=".6"/></svg>',
+jar:'<svg viewBox="0 0 120 120" fill="currentColor"><rect x="32" y="22" width="56" height="12" rx="3"/><rect x="36" y="38" width="48" height="66" rx="10"/></svg>',
+butter:'<svg viewBox="0 0 120 120" fill="currentColor"><path d="M20 56l16-16h64l-16 16z" opacity=".6"/><rect x="20" y="56" width="68" height="36" rx="3"/><path d="M88 56l16-16v36L88 92z" opacity=".8"/></svg>',
+eggs:'<svg viewBox="0 0 120 120" fill="currentColor"><ellipse cx="42" cy="66" rx="22" ry="28"/><ellipse cx="82" cy="72" rx="20" ry="26" opacity=".6"/></svg>'};
+const P=[
+{id:1,n:'Бяло саламурено сирене',d:'От краве мляко, зряло 60 дни',w:'500 г',p:9.5,s:S.cheese},
+{id:2,n:'Кашкавал',d:'Узрял в изба, без консерванти',w:'400 г',p:11,s:S.wheel},
+{id:3,n:'Прясно мляко',d:'Сурово, охладено, от сутринта',w:'1 л',p:2.4,s:S.milk},
+{id:4,n:'Кисело мляко',d:'С жива закваска, гъсто и кремообразно',w:'400 г',p:1.6,s:S.jar},
+{id:5,n:'Краве масло',d:'Бита на ръка от пресни сметана',w:'250 г',p:6.5,s:S.butter},
+{id:6,n:'Био яйца',d:'От свободно отглеждани кокошки',w:'10 бр.',p:4.5,s:S.eggs}];
+const $=s=>document.querySelector(s),cart={},f=n=>n.toFixed(2).replace('.',',')+' €';
+$('#grid').innerHTML=P.map(x=>`<article class="card"><div class="vis">${x.s}</div><h3>${x.n}</h3><p>${x.d}</p><div class="row"><span class="pr">${f(x.p)}<small>/ ${x.w}</small></span><button class="add" data-id="${x.id}" aria-label="Добави ${x.n}">+</button></div></article>`).join('');
+const drawer=$('#drawer'),shade=$('#shade');
+const show=v=>{drawer.classList.toggle('on',v);shade.classList.toggle('on',v)};
+function draw(done){
+ const ids=Object.keys(cart),n=ids.reduce((a,i)=>a+cart[i],0);$('#cnt').textContent=n;
+ const box=$('#items');
+ if(done){box.innerHTML='<p class="ok">Благодарим ви! Получихме поръчката и ще се свържем с вас до 24 часа.</p>';return}
+ if(!n){box.innerHTML='<p class="empty">Поръчката е празна. Добавете продукти от списъка.</p>';return}
+ const tot=ids.reduce((a,i)=>a+cart[i]*P.find(x=>x.id==i).p,0);
+ box.innerHTML=ids.map(i=>{const x=P.find(y=>y.id==i);return `<div class="it"><div>${x.n}<br><span class="q"><button data-m="${i}" aria-label="Намали">−</button>${cart[i]}<button data-a="${i}" aria-label="Увеличи">+</button></span></div><span>${f(cart[i]*x.p)}</span></div>`}).join('')+
+ `<div class="tot"><span>Общо</span><span>${f(tot)}</span></div><form id="fm"><input required placeholder="Име и фамилия" autocomplete="name"><input required placeholder="Телефон" type="tel" autocomplete="tel"><input required placeholder="Адрес за доставка" autocomplete="street-address"><br><br><button class="btn f" style="width:100%">Изпрати поръчката</button></form>`;
+}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ const id=b.dataset.id||b.dataset.a,m=b.dataset.m;
+ if(id){cart[id]=(cart[id]||0)+1;draw();if(b.dataset.id)show(true)}
+ else if(m){if(--cart[m]<=0)delete cart[m];draw()}
+});
+document.addEventListener('submit',e=>{e.preventDefault();for(const k in cart)delete cart[k];draw(true)});
+$('#open').onclick=()=>{draw();show(true)};$('#close').onclick=shade.onclick=()=>show(false);draw();
+
+if(window.gsap&&window.ScrollTrigger){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('.ln>span',{yPercent:115,duration:1.3,stagger:.14,ease:'power4.out'});
+ gsap.from('.fade,.scroll',{opacity:0,y:20,duration:1,delay:.9,stagger:.12});
+ gsap.from('.o1,.o2,.o3',{scale:.6,opacity:0,duration:1.6,stagger:.15,ease:'power3.out'});
+ gsap.utils.toArray('[data-s]').forEach(el=>gsap.to(el,{yPercent:+el.dataset.s,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}}));
+ const mp=$('#mani');mp.innerHTML=mp.textContent.split(' ').map(w=>`<span>${w}</span>`).join(' ');
+ gsap.fromTo('#mani span',{opacity:.14},{opacity:1,stagger:.08,ease:'none',scrollTrigger:{trigger:'#mani',start:'top 80%',end:'bottom 55%',scrub:true}});
+ gsap.utils.toArray('.vis').forEach(v=>{
+  gsap.from(v,{clipPath:'inset(100% 0% 0% 0%)',duration:1.3,ease:'power4.out',scrollTrigger:{trigger:v,start:'top 88%'}});
+  gsap.from(v.firstElementChild,{yPercent:30,scale:.8,ease:'none',scrollTrigger:{trigger:v,start:'top bottom',end:'bottom 40%',scrub:true}});
+ });
+ gsap.utils.toArray('.card h3,.card .row,.st,blockquote,.sec h2,.cta h2,.about p').forEach(el=>gsap.from(el,{opacity:0,y:36,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}}));
+}
+</script>
+</body>
+</html>
